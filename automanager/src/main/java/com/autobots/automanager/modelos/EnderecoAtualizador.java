@@ -1,4 +1,6 @@
-package com.autobots.automanager.modelo;
+package com.autobots.automanager.modelos;
+
+import java.util.List;
 
 import com.autobots.automanager.entidades.Endereco;
 
@@ -22,8 +24,21 @@ public class EnderecoAtualizador {
 			if (!verificador.verificar(atualizacao.getNumero())) {
 				endereco.setNumero(atualizacao.getNumero());
 			}
+			if (!verificador.verificar(atualizacao.getCodigoPostal())) {
+				endereco.setCodigoPostal(atualizacao.getCodigoPostal());
+			}
 			if (!verificador.verificar(atualizacao.getInformacoesAdicionais())) {
 				endereco.setInformacoesAdicionais(atualizacao.getInformacoesAdicionais());
+			}
+		}
+	}
+
+	public void atualizar(List<Endereco> enderecos, List<Endereco> atualizacoes) {
+		for (Endereco atualizacao : atualizacoes) {
+			for (Endereco endereco : enderecos) {
+				if (atualizacao.getId() != null && atualizacao.getId().equals(endereco.getId())) {
+					atualizar(endereco, atualizacao);
+				}
 			}
 		}
 	}
