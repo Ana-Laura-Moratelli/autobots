@@ -30,7 +30,7 @@ O Autobots é um sistema desenvolvido para atender lojas especializadas em manut
   </tr>
   <tr>
     <td align="center">4</td>
-    <td align="center">Processo de autenticação vis Json Web token (JWT)</td>
+    <td align="center">Processo de autenticação via Json Web token (JWT)</td>
   </tr>
   <tr>
     <td align="center">5</td>
