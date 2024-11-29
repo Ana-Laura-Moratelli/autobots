@@ -22,7 +22,7 @@ import com.autobots.automanager.jwt.ProvedorJwt;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class Seguranca {
 
-    private static final String[] rotasPublicas = { "/", "/login" };
+    private static final String[] rotasPublicas = { "/", "/login", "/apilogin" };
 
     private final UserDetailsServiceImpl servico;
     private final ProvedorJwt provedorJwt;
