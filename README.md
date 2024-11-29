@@ -41,8 +41,13 @@ O Autobots é um sistema desenvolvido para atender lojas especializadas em manut
 
   <h3>Passo 1: Clone o Repositório</h3>
   <pre><code>git clone https://github.com/Ana-Laura-Moratelli/autobots -b {branch desejada} </code></pre>
-
- <h3>Passo 2: Inicie a Aplicação</h3>
+  <h3>Passo 2: Abra o arquivo "application.properties" (localizado no caminho src/main/resources) e altere as credenciais do banco de dados:</h3>
+ 
+  <pre><code>spring.datasource.url=jdbc:mysql://localhost:3306/autobots
+spring.datasource.username=seu_usuario
+spring.datasource.password=sua_senha</code></pre>
+  
+ <h3>Passo 3: Inicie a Aplicação</h3>
  
   - Acesse a pasta automanager no Eclipse
   
