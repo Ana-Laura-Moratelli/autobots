@@ -9,16 +9,19 @@ import javax.persistence.Id;
 import org.springframework.hateoas.RepresentationModel;
 
 @Entity
-public class Telefone extends RepresentationModel<Telefone> {
+public class Servico extends RepresentationModel<Servico> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String ddd;
+    private String nome;
 
     @Column(nullable = false)
-    private String numero;
+    private double valor;
+
+    @Column
+    private String descricao;
 
     // Getters e Setters
     public Long getId() {
@@ -29,20 +32,28 @@ public class Telefone extends RepresentationModel<Telefone> {
         this.id = id;
     }
 
-    public String getDdd() {
-        return ddd;
+    public String getNome() {
+        return nome;
     }
 
-    public void setDdd(String ddd) {
-        this.ddd = ddd;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getNumero() {
-        return numero;
+    public double getValor() {
+        return valor;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     // equals e hashCode
@@ -50,8 +61,8 @@ public class Telefone extends RepresentationModel<Telefone> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Telefone telefone = (Telefone) o;
-        return id != null && id.equals(telefone.id);
+        Servico servico = (Servico) o;
+        return id != null && id.equals(servico.id);
     }
 
     @Override

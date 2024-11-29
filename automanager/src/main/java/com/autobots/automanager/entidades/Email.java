@@ -9,16 +9,13 @@ import javax.persistence.Id;
 import org.springframework.hateoas.RepresentationModel;
 
 @Entity
-public class Telefone extends RepresentationModel<Telefone> {
+public class Email extends RepresentationModel<Email> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String ddd;
-
-    @Column(nullable = false)
-    private String numero;
+    private String endereco;
 
     // Getters e Setters
     public Long getId() {
@@ -29,20 +26,12 @@ public class Telefone extends RepresentationModel<Telefone> {
         this.id = id;
     }
 
-    public String getDdd() {
-        return ddd;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setDdd(String ddd) {
-        this.ddd = ddd;
-    }
-
-    public String getNumero() {
-        return numero;
-    }
-
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
     // equals e hashCode
@@ -50,8 +39,8 @@ public class Telefone extends RepresentationModel<Telefone> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Telefone telefone = (Telefone) o;
-        return id != null && id.equals(telefone.id);
+        Email email = (Email) o;
+        return id != null && id.equals(email.id);
     }
 
     @Override
